@@ -19,7 +19,7 @@ const FilmInfo = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [params]);
+  }, [params.filmId]);
 
   return (
     <div>

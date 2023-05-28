@@ -21,7 +21,7 @@ const Cast = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [params]);
+  }, [params.filmId]);
 
   return (
     <CastContainer>
