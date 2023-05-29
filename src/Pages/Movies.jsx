@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { SearchMovie } from '../components/Api/Api';
+import  {SearchMovie}  from '../components/Api/Api';
 import CardList from '../components/CardList/CardList';
 import Searchbar from '../components/SearchBar/Searchbar';
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 
 import { GoBack, List, Cast, Review } from './MovieDetails.styled';
-import { MovieInfo } from '../components/Api/Api';
+import  {MovieInfo}  from '../components/Api/Api';
 import MovieCard from '../components/MovieCard/MovieCard';
 
 const FilmInfo = () => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { GetMovies } from '../components/Api/Api';
+import  {GetMovies}  from '../components/Api/Api';
 import CardList from '../components/CardList/CardList';
 
 const Home = () => {
