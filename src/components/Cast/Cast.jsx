@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { MovieCast } from '../Api/Api';
+import  {MovieCast}  from '../Api/Api';
 import { List, CastContainer, P, Item } from './Cast.styled';
 
 const Cast = () => {

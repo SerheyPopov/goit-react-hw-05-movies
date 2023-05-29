@@ -1,67 +1,50 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-const options = {
-  headers: {
-    accept: 'application/json',
-    Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YmFjMThkZTliMmI1NDkwNTZmYWVhNTZjOTAyNzU2YiIsInN1YiI6IjY0NmI1NGE5NTc1MzBlMDc4YTYwYjYxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.M0yl0J_692yCcYW8WNbOdrUjK2jg9bmYgULdE6qFbyg',
-  },
-};
-
-axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+const API_KEY = '5f2a66e63fa9a8139a0b7e8b9aba27ca';
+const URL = 'https://api.themoviedb.org/';
+axios.defaults.baseURL = URL;
 
 export const GetMovies = async () => {
   try {
-    const server = await axios.get(`trending/movie/day`, options);
+    const server = await axios.get(
+      `3/trending/movie/day?api_key=${API_KEY}&language=en-US`
+    );
     const data = await server.data;
     return data;
   } catch (error) {
     console.error(error);
   }
 };
-// export default GetMovies;
-
-// export const GetMovies = async () => {
-//   const response = await axios.get(`trending/movie/day`, options);
-//   return response.data;
-// };
 
 export const SearchMovie = async onSubmit => {
   try {
-    const server = await axios.get(`search/movie?query=${onSubmit}`, options);
+    const server = await axios.get(
+      `3/search/movie?query=${onSubmit}&api_key=${API_KEY}&language=en-US`
+    );
     const data = await server.data;
     return data;
   } catch (error) {
     console.error(error);
   }
 };
-
-// export const SearchMovie = async onSubmit => {
-//   const response = await axios.get(`search/movie?query=${onSubmit}`, options);
-//   return response.data;
-// };
 
 export const MovieInfo = async onSubmitId => {
   try {
-    const server = await axios.get(`movie/${onSubmitId}`, options);
+    const server = await axios.get(
+      `3/movie/${onSubmitId}?api_key=${API_KEY}&language=en-US`
+    );
     const data = await server.data;
     return data;
   } catch (error) {
     console.error(error);
   }
 };
-
-// export const MovieInfo = async onSubmitId => {
-//   const response = await axios.get(`movie/${onSubmitId}`, options);
-//   return response.data;
-// };
 
 export const MovieCast = async onSubmitCast => {
   try {
     const server = await axios.get(
-      `movie/${onSubmitCast}/credits?language=en-US`,
-      options
+      `3/movie/${onSubmitCast}/credits?api_key=${API_KEY}&language=en-US`
     );
     const data = await server.data;
     return data;
@@ -69,20 +52,11 @@ export const MovieCast = async onSubmitCast => {
     console.error(error);
   }
 };
-
-// export const MovieCast = async onSubmitCast => {
-//   const response = await axios.get(
-//     `movie/${onSubmitCast}/credits?language=en-US`,
-//     options
-//   );
-//   return response.data;
-// };
 
 export const MovieReviews = async onSubmitReviews => {
   try {
     const server = await axios.get(
-      `movie/${onSubmitReviews}/reviews?language=en-US`,
-      options
+      `3/movie/${onSubmitReviews}/reviews?api_key=${API_KEY}&language=en-US`
     );
     const data = await server.data;
     return data;
@@ -90,14 +64,6 @@ export const MovieReviews = async onSubmitReviews => {
     console.error(error);
   }
 };
-
-// export const MovieReviews = async onSubmitReviews => {
-//   const response = await axios.get(
-//     `movie/${onSubmitReviews}/reviews?language=en-US`,
-//     options
-//   );
-//   return response.data;
-// };
 
 SearchMovie.propTypes = {
   onSubmit: PropTypes.string,
